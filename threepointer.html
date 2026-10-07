@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<body>
+    <script type="text/javascript">
+        // Dutch National Flag
+        // function sortColors(arr) {
+        //     let low = 0, mid = 0, high = arr.length - 1;
+        //     while (mid <= high) {
+        //         if (arr[mid] == 0) {
+        //             [arr[low], arr[mid]] = [arr[mid], arr[low]];
+        //             low++;
+        //             mid++;
+        //         }
+        //         if (arr[mid] == 1) {
+        //             mid++;
+        //         }
+        //         if (arr[mid] == 2) {
+        //             [arr[mid], arr[high]] = [arr[high], arr[mid]];
+        //             high--;
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // let arr = [0, 1, 2, 0, 2, 1];
+        // console.log(sortColors(arr));
+
+
+        // Three sum problem
+        // function threeSum(arr, target) {
+        //     arr = arr.sort((a, b) => a - b);
+        //     const result = [];
+        //     for (let i = 0; i < arr.length - 2; i++) {
+        //         if (i > 0 && arr[i - 1] == arr[i])
+        //             continue;
+
+        //         let left = i + 1;
+        //         let right = arr.length - 1;
+
+        //         while (left < right) {
+        //             let sum = arr[i] + arr[left] + arr[right];
+
+        //             if (sum === target) {
+        //                 result.push([arr[i], arr[left], arr[right]]);
+        //                 while (left < right && arr[left] === arr[left + 1]) {
+        //                     left++;
+        //                 }
+        //                 while (left < right && arr[right - 1] === arr[right]) {
+        //                     right--;
+        //                 }
+
+        //                 left++;
+        //                 right--;
+        //             }
+        //             else if (sum < target) {
+        //                 left++;
+        //             }
+        //             else {
+        //                 right--;
+        //             }
+        //         }
+        //     }
+        //     return result;
+        // }
+        // let arr = [-1, 0, -4, 2, 1, -1];
+        // console.log(threeSum(arr, 0));
+
+
+        //Partition around pivot
+        // function partitionAroundPivot(arr, k) {
+        //     if (arr.length <= 1) return arr;
+        //     arr = arr.sort((a, b) => a - b);
+        //     let low = 0, mid = 0, high = arr.length - 1;
+
+        //     while (mid <= high) {
+        //         if (arr[mid] < k) {
+        //             [arr[low], arr[mid]] = [arr[mid], arr[low]];
+        //             low++;
+        //             mid++;
+        //         }
+
+        //         if (arr[mid] == k) {
+        //             mid++;
+        //         }
+
+        //         if (arr[mid] > k) {
+        //             [arr[high], arr[mid]] = [arr[mid], arr[high]];
+        //             high--;
+        //         }
+        //     }
+
+        //     return arr;
+        // }
+
+        // let arr = [7, 2, 9, 1, 5];
+        // console.log(partitionAroundPivot(arr, 5));
+
+
+        // find the longest substring without repeating characters
+        // function longestSubstring(s) {
+        //     if (s.length <= 1) return s;
+
+        //     let left = 0;
+        //     let map = new Map();
+        //     let maxlength = 0;
+        //     let currentLength = 0;
+        //     let output = new Set();
+
+        //     for (let right = 0; right < s.length ; right++) {
+        //         let char = s[right];
+
+        //         if (map.has(char) && map.get(char) >= left) {
+        //             left = map.get(char) + 1;
+        //         }
+
+        //         map.set(char, right);
+
+        //         let currentLength = right - left + 1;
+        //         let currentSubString = s.slice(left, right + 1);
+        //         if (currentLength > maxlength) {
+        //             maxlength = currentLength;
+        //             output.clear();
+        //             output.add(currentSubString);
+        //         } else if (currentLength == maxlength) {
+        //             output.add(currentSubString);
+        //         }
+
+        //     }
+        //     return [...output];
+        // }
+
+        // let arr = "abcabcbb";
+        // console.log(longestSubstring(arr));
+
+        // function maxConsectuiveOnesWithkZeroes(nums, k) {
+        //     if (nums.length == 0) return 0;
+        //     let left = 0; right = 0, maxlen = 0, zeroes = 0;
+        //     while (right < nums.length) {
+        //         const val = nums[right];
+        //         if (val == 0) zeroes++;
+        //         if (zeroes > k) {
+        //             if (nums[left] === 0) zeroes--;
+        //             left++;
+        //         }
+        //         if (zeroes <= k) {
+        //             let currentLength = right - left + 1;
+        //             maxlen = Math.max(maxlen, currentLength);
+        //         }
+        //        right++;
+        //     }
+        //     return maxlen;
+        // }
+
+        // let nums = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0];
+        // console.log(maxConsectuiveOnesWithkZeroes(nums, 2));
+
+
+        // function maxFruitsinBaksetWith2FruitTypes(nums) {
+        //     if (nums.length <= 0) return 0;
+        //     let left = 0, right = 0, maxlength = 0;
+        //     let basket = new Map();
+        //     while (right < nums.length) {
+        //         let val = nums[right];
+        //         basket.set(nums[right], (basket.get(val) || 0) + 1);
+        //         if (basket.size > 2) {
+        //             let leftNum = nums[left];
+        //             basket.set(leftNum, basket.get(leftNum) - 1);
+        //             if (basket.get(leftNum) == 0)
+        //                 basket.delete(leftNum);
+        //             left++;
+        //         }
+        //         if (basket.size <= 2) {
+        //             maxlength = Math.max(maxlength, right - left + 1);
+        //         }
+        //         right++;
+        //     }
+        //     return maxlength;
+        // }
+
+        // let nums = [3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4];
+        // console.log(maxFruitsinBaksetWith2FruitTypes(nums));
+
+    </script>
+</body>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<body>
+   <script type="text/javascript">
+
+
+      // Algorithm	      Core idea
+      // Selection Sort =>	Select min/max and do ONE swap per pass
+      // Bubble Sort    => Compare adjacent elements and do MANY swaps per pass
+
+      //Selection Sort
+      // pushes the minimum element to the front in each iteration
+      // let arr = [21, 4, 8, 9, 1];
+      // let n = arr.length;
+      // for (let i = 0; i <= n - 2; i++) {
+      //    let mini = i;
+      //    for (let j = i + 1; j <= n - 1; j++) {
+      //       if (arr[j] < arr[mini]) {
+      //          mini = j;
+      //       }
+      //    }
+      //    [arr[i], arr[mini]] = [arr[mini], arr[i]]
+      // }
+
+      // console.log("Sorted Array", arr);
+
+      // Bubble Sort
+      // pushed the maximum element to the end in each iteration
+
+      // let arr = [24, 2, 89, 45, 64, 4];
+      // let n = arr.length;
+      // for (i = n - 1; i >= 1; i--) {
+      //    let didSwap = 0;
+      //    for (j = 0; j < i; j++) {
+      //       if (arr[j] > arr[j + 1]) {
+      //          let temp = arr[j];
+      //          arr[j] = arr[j + 1];
+      //          arr[j + 1] = temp;
+      //          didSwap ++; 
+      //       }
+      //    }
+      //    if(didSwap == 0) break;
+      // }
+
+      // console.log("Bubble Sort ", arr);
+
+      //Insertion Sort
+      // let arr = [2, 5, 9, 71, 1, 65];
+      // let n = arr.length;
+
+      // for (let i = 0; i < n; i++) {
+      //    let j = i;
+      //    while (j > 0 && arr[j - 1] > arr[j]) {
+      //       let temp = arr[j];
+      //       arr[j] = arr[j - 1];
+      //       arr[j - 1] = temp;
+      //       j--
+      //    }
+      // }
+
+      // console.log("Insertion Sort", arr);
+
+      // Merge Sort
+      // let arr = [5, 9, 4, 1, 6]
+      // TC :- O(n log n) and SC :- O(n)
+
+      // function merge(arr, low, mid, high) {
+      //    let temp = [];
+      //    let left = low;
+      //    let right = mid + 1
+      //    // Compare and merge
+      //    while (left <= mid && right <= high) {
+      //       if (arr[left] <= arr[right]) {
+      //          temp.push(arr[left]);
+      //          left++;
+      //       } else {
+      //          temp.push(arr[right]);
+      //          right++;
+      //       }
+      //    }
+
+      //    // Copy remaining elements from left half
+      //    while (left <= mid) {
+      //       temp.push(arr[left]);
+      //       left++;
+      //    }
+
+      //    // Copy remaining elements from right half
+      //    while (right <= high) {
+      //       temp.push(arr[right]);
+      //       right++;
+      //    }
+
+      //    // Copy back to original array
+      //    for (let i = low; i <= high; i++) {
+      //       arr[i] = temp[i - low];
+      //    }
+      // }
+
+      // function mergeSort(arr, low, high) {
+      //    if (low >= high) return;
+      //    let mid = Math.floor((low + high) / 2);
+      //    mergeSort(arr, low, mid);
+      //    mergeSort(arr, mid + 1, high);
+      //    merge(arr, low, mid, high);
+
+      // }
+
+      // mergeSort(arr, 0, arr.length - 1);
+
+      // console.log("Merge Sort", arr);  --- Time Complexity O(n log n) and Space Complexity O(n)
+
+      //Quick Sort - TC :- O(n log n) , SC :- O(1)
+
+      // Logic =>  Pick up the pivot and place it in the correct position such that all smaller elements are on left and all greater elements are on right
+
+      // let arr = [4, 6, 2, 5, 7, 9, 1, 3];
+
+
+      // function findPivotAndPlaceAtCorrectPlace(arr, low, high) {
+      //    let pivot = low, i = low, j = high;
+
+      //    while (i < j) {
+      //       while (i <= high && arr[i] < arr[pivot]) {
+      //          i++;
+      //       }
+      //       while (j >= low && arr[j] > arr[pivot]) {
+      //          j--;
+      //       }
+      //       if (i < j) {
+      //          let temp = arr[i];
+      //          arr[i] = arr[j];
+      //          arr[j] = temp;
+      //       }
+      //    }
+
+      //    let temp = arr[pivot];
+      //    arr[pivot] = arr[j];
+      //    arr[j] = temp;
+
+      //    return j;
+      // }
+
+      // function quickSort(arr, low, high) {
+      //    if (low < high) {
+      //       let partitionIndex = findPivotAndPlaceAtCorrectPlace(arr, low, high)
+      //       quickSort(arr, low, partitionIndex - 1);
+      //       quickSort(arr, partitionIndex + 1, high);
+      //    }
+
+      // }
+
+      // quickSort(arr, 0, arr.length - 1)
+      // console.log(arr);
+
+
+      // Find sum with pairs using two pointers
+      // function findPairswithSum(num, target) {
+      //    let left = 0;
+      //    let right = num.length - 1;
+      //    let pairs = [];
+
+      //    while (left < right) {
+      //       let sum = num[left] + num[right];
+      //       if (sum == target) {
+      //          pairs.push([num[left], num[right]]);
+      //          left++;
+      //          right--;
+
+      //          while (left < right && num[left] == num[left - 1]) left++;
+      //          while (left < right && num[right] == num[right + 1]) right--;
+      //       }
+      //       else if (sum < target)
+      //          left++;
+      //       else
+      //          right--;
+      //    }
+
+      //    return pairs
+      // }
+
+      // const nums = [1, 2, 3, 4, 5, 6];
+      // const target = 7;
+      // console.log(findPairswithSum(nums, target));
+
+      // ===================================================================
+
+      // // Memoize function
+      // function memoize(fn) {
+      //    const cache = new Map();
+
+      //    return function (...args) {
+      //       // Create a key from the arguments. Here we're using JSON.stringify,
+      //       // which works well for many cases, but note it might not be ideal for functions or non-serializable values.
+      //       const key = JSON.stringify(args);
+
+      //       if (cache.has(key)) {
+      //          console.log('Fetching from cache for arguments:', args);
+      //          return cache.get(key);
+      //       }
+
+      //       console.log('Computing result for arguments:', args);
+      //       const result = fn.apply(this, args);
+      //       cache.set(key, result);
+      //       return result;
+      //    };
+      // }
+
+      // // Fibonacci series with memoize function
+
+      // const memoizedFibonacci = memoize(function fibonacci(n) {
+      //    if (n < 2) return n;
+      //    return fibonacci(n - 1) + fibonacci(n - 2);
+      // })
+
+
+      // Task Scheduler
+
+      // class TaskScheduler{
+      //    constructor(concurrency){
+      //       this.concurrency = Number(concurrency);
+      //       this.runningTasks = 0;
+      //       this.__waitingQueue = [];
+      //    }
+
+      //    getNextTask() {
+      //       if(this.runningTasks < this.concurrency && this.__waitingQueue.length > 0){
+      //          const nextTask = this.__waitingQueue.shift();
+      //          nextTask();
+      //       }
+      //    }
+
+      //    addTask(task){
+      //       return new Promise((resolve,reject)=>{
+      //          async function __taskRunner() {
+      //             this.runningTasks += 1;
+      //             try{
+      //                const result = await task();
+      //                console.log('Result',result);
+      //                resolve(result);
+      //             }
+      //             catch(err){
+      //                console.log('Task failed',err);
+      //                reject(err)
+      //             }
+      //             finally{
+      //                this.runningTasks -= 1;
+      //                this.getNextTask();
+      //             }
+      //          }
+
+      //          if(this.runningTasks < this.concurrency){
+      //             __taskRunner.call(this);
+      //          }
+      //          else{
+      //             this.__waitingQueue.push(__taskRunner.bind(this));
+      //          }
+
+      //       })
+      //    }
+
+      // }
+
+      // const scheduler = new TaskScheduler(2);
+      // scheduler.addTask(() => new Promise((res) => setTimeout(()=> res("Task 1"),5 * 1000)));
+      // scheduler.addTask(() => new Promise((res) => setTimeout(()=> res("Task 2"),5 * 1000)));
+      // scheduler.addTask(() => new Promise((res) => setTimeout(()=> res("Task 3"),5 * 1000)));
+      // scheduler.addTask(() => new Promise((res) => setTimeout(()=> res("Task 4"),5 * 1000)));
+
+      //Event Emitter
+
+
+      // class MyEventEmitter {
+      //    constructor() {
+      //       // Event: Subscribers[]
+      //       this.__event_listeners = {
+
+      //       }
+      //    }
+
+      //    on(event, listener) {
+      //       // Register the listener for an event
+      //       if (!this.__event_listeners[event]) {
+      //          this.__event_listeners[event] = [];
+      //       }
+
+      //       this.__event_listeners[event].push(listener);
+      //    }
+
+      //    emit(event, ...args) {
+      //       if (!this.__event_listeners[event]) {
+      //          return false;
+      //       }
+
+      //       const listeners = this.__event_listeners[event];
+      //       listeners.forEach(listener =>
+      //          listener(...args)
+      //       );
+      //    }
+
+      //    off(event, listener) {
+      //       if (!this.__event_listeners[event]) {
+      //          return false;
+      //       }
+
+      //       const index = this.__event_listeners[event].indexOf(listener);
+      //       if (index < 0){
+      //          return false;
+      //       }
+
+      //       this.__event_listeners[event].splice(index,1);
+      //       return true;
+      //    }
+
+      //    once(event, listener) {
+      //       const wrpperFn = (...args) => {
+      //          listener(...args);
+      //          this.off(event,wrpperFn);
+      //       }
+      //       this.on(event,wrpperFn);
+      //       return true;
+      //    }
+      // }
+
+      // const e = new MyEventEmitter();
+      // e.on('user:signup', (username) => console.log('user Signup'));
+      // e.on('user:signup', (username) => console.log('Sending mail to', username));
+      // e.on('user:signup', (username) => console.log('Whatsapp to', username));
+      // e.on('user:logout', (username) => console.log('logout', username));
+
+      // e.emit('user:signup', '@ankurgupta');
+      // e.emit('user:signup', '@ankurgupta-1');
+      // e.emit('user:signup', '@ankurgupta-2'); 
+
+      // e.emit('user:logout', '@ankurgupta');
+
+      function throttle(fn, delay) {
+         let lastcall = 0;
+         return function (...args) {
+            const now = Date.now();
+            if (now - lastcall < delay) {
+               return;
+            }
+            lastcall = now;
+            return fn(...args);
+         }
+      }
+
+      const sendChatMessage = (message) => {
+         console.log("Sending message", message)
+      }
+
+      const sendChatMessageWithSlowMode = () => {
+         throttle(search, 1000);
+      }
+
+      function debounce(fn, delay) {
+         let timerId;
+
+         return function (...args) {
+            clearTimeout(timerId);
+            timerId = setTimeout(() => {
+               fn(...args);
+            }, delay)
+         }
+      }
+
+      const search = (query) => {
+         console.log("Searching for query", query)
+      }
+
+      const searchWithDebounce = () => {
+         debounce(search, 1000);
+      }
+
+   </script>
+</body>
+
+
+<!-- how to create an object with no prototype in javascript
+const obj = Object.create(null); -->
+
+<!-- 
+Answer the following questions:
+1> Why does useEffect run twice on initial render in developent? (Hint : React: strict mode)
+2> What's the difference between useEffect(() => {},[]) and useEffect(()=>{},[state]) if state never changes.
+3> why might a component using React.memo still re-render?(referential equality)
+4> Can useState updates be batched outside of event handlers? Why or why not?
+5> What happens if you call a hook inside a conditional or a loop? Why exactly is it wrong?
+6> How does useCallback help with React.memo and wheen does it become useless overhead.
+7> What is the difference betweeen useRef and useState when storing a mutable value?
+8> Why is using setInterval insideuseEffect tricky? Why must you do to access late stare?
+9> How can state closures afect your useEffector setTiemout calls?
+10> Why might passing a function prop like onClick=(()=> doSomething()} break memoization
+11> When does a component re render even if state /props havent changed.
+12> Why doesn't useEffec fire when a deeply nested object inside state changes.
+13> Whats the actual difference between useEffect and useLayoutEffect in terms of timing.
+14> How would you persist state across component unmounts without usign redux or context?
+15> Can a useEffect cleanup function run after every render ? When?
+16> Whats the best way to debounce a value using hooks?
+17> Why is using index a key in a list sometimes dangerous? Can you give a practical example?
+18> What are the risks of using derived state in React?
+19> How do you detect if a component is still mounted before calling setSDtate in an async operation? -->
+
+/*
+OOPS Concepts
+1> Encapsulation
+2> Abstraction
+3> Inheritance
+4> Polymorphism
+
+Design Patterns
+1> Singleton
+2> Factory
+3> Observer
+4> Strategy
+5> Adapter
+
+
+*/
+
+function addLobCodesIfNeeded(menuItems, targetLob, newLobsCsv) {
+// Convert comma-separated string into array of lob objects
+const NEW_LOBS = newLobsCsv.split(",").map(lobCode => ({
+lob_code: lobCode.trim(),
+url: null
+}));
+
+function processItem(item) {
+if (Array.isArray(item.lobs)) {
+const hasTargetLob = item.lobs.some(lob => lob.lob_code === targetLob);
+
+if (hasTargetLob) {
+NEW_LOBS.forEach(newLob => {
+const hasNewLob = item.lobs.some(lob => lob.lob_code === newLob.lob_code);
+if (!hasNewLob) {
+item.lobs.push({ ...newLob });
+}
+});
+}
+}
+
+// Recursively process nested menus
+if (Array.isArray(item.menu)) {
+item.menu.forEach(processItem);
+}
+}
+
+// Start processing from the top level
+menuItems.forEach(processItem);
+}
+
+// Sample input array
+const data = [];
+
+// Example usage
+addLobCodesIfNeeded(
+data,
+"homehealth.nonskld.pd.ad",
+"homehealth.nonskld.ad,nonskilled.nonmed.ad"
+);
+
+console.log(JSON.stringify(data, null, 2));

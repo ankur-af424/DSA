@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<body>
+    <script type="text/javascript">
+
+        // FIXED SIZE WINDOW
+        // Max sum of sub array of size k
+        // function maxSum(arr, k) {
+        //     let sum = 0;
+        //     for (let i = 0; i < k; i++) {
+        //         sum += arr[i];
+        //     }
+        //     let max = sum;
+        //     for (let right = k; right < arr.length; right++) {
+        //         sum += arr[right];
+        //         sum -= arr[right - k];
+        //         max = Math.max(max, sum);
+        //     }
+        //     return max;
+        // }
+        // let nums = [2, 1, 5, 1, 3, 2];
+        // let k = 3;
+        // console.log(maxSum(nums, k));
+
+
+        // Variable size window
+        // Find the minimum length of a contiguous subarray whose sum is at least target.
+        // function minimumSubArrayLength(arr, k) {
+        //     let left = 0;
+        //     let sum = 0;
+        //     let min = Infinity;
+        //     for (let right = 0; right < arr.length; right++) {
+        //         sum = sum + arr[right];
+        //         while (sum >= k) {
+        //             min = Math.min(min, right - left + 1);
+        //             sum = sum - arr[left];
+        //             left++;
+        //         }
+        //     }
+        //     return min === Infinity ? 0 : min;
+        // }
+        // let nums = [2, 3, 1, 2, 4, 3];
+        // let k = 7;
+        // console.log(minimumSubArrayLength(nums, k));
+
+        //smallest substring that contains all the character of target string
+        // function minWindow(s, t) {
+        //     if (s.length < t.length) return "";
+        //     const need = new Map();
+        //     for (const char of t) {
+        //         need.set(char, (need.get(char) || 0) + 1);
+        //     }
+        //     let count = t.length;
+        //     let left = 0, start = 0, minLength = Infinity;
+        //     for (let right = 0; right < s.length; right++) {
+        //         const ch = s[right];
+        //         if (need.has(ch)) {
+        //             if (need.get(ch) > 0)
+        //                 count--;
+        //             need.set(ch, need.get(ch) - 1);
+        //         }
+        //         while (count === 0) {
+        //             if (right - left + 1 < minLength) {
+        //                 minLength = right - left + 1;
+        //                 start = left;
+        //             }
+        //             let leftChar = s[left];
+        //             need.set(leftChar, need.get(leftChar) + 1);
+        //             if (need.get(leftChar) > 0)
+        //                 count++;
+        //             left++;
+        //         }
+        //     }
+        //     return minLength === Infinity ? "" : s.slice(start, start + minLength);
+        // }
+        // console.log(
+        //     minWindow("ddaaabbca", "abc")
+        // );
+
+        // number-of-substrings-containing-all-three-characters
+        // function numberOfSubstrings(s) {
+        //     // last seen index of 'a', 'b', 'c' (-1 = not seen yet)
+        //     const last = { a: -1, b: -1, c: -1 };
+        //     let count = 0;
+
+        //     for (let r = 0; r < s.length; r++) {
+        //         last[s[r]] = r; // update last-seen position of current char
+
+        //         // earliest of the three last-seen indices
+        //         const m = Math.min(last.a, last.b, last.c);
+
+        //         if (m !== -1) {
+        //             // every start index in [0, m] gives a valid substring ending at r
+        //             count += m + 1;
+        //         }
+        //     }
+
+        //     return count;
+        // }
+
+        // console.log(numberOfSubstrings("bbacba"));
+
+
+        // longest substring with atmost k replacement
+
+        // function longestSubStringKreplacement(s,k){
+
+        //     let l=0,r=0,maxf=0,maxlen=0;
+        //     let hash = new Map();
+
+        //     while(r < s.length){
+        //         let ch = s[r];
+        //         hash.set(ch,(hash.get(ch) || 0)+1);
+
+        //         maxf = Math.max(maxf, hash.get(ch));
+
+        //         // In case of invalid string move the left pointer
+        //         if(((r-l+1)-maxf) > k){
+        //             hash.set(s[l],(hash.get(s[l]))-1);
+        //             // maxf = 0;
+        //             // for(const [key,value] of hash){
+        //             //     maxf = Math.max(maxf,value);
+        //             // }
+        //             l++;
+        //         }
+
+        //         if((r-l+1)-maxf <=k){
+        //             maxlen = Math.max(maxlen, r-l+1);
+        //         }
+
+        //         r++;
+        //     }
+
+        //      return maxlen;
+        // }
+
+        // console.log(longestSubStringKreplacement("AAABBCCD",2));
+
+        // Count number of subarrays with sum less than or equal to goal
+        // let arr = [1, 0, 0, 1, 1, 0];
+        // const goal = 2;
+
+        // function countSubArrayWithLessthanequalGoal(arr, goal) {
+        //     if (goal < 0) return 0;
+        //     let l = 0, r = 0, count = 0, sum = 0;
+
+        //     while (r < arr.length) {
+        //         sum += arr[r];
+
+        //         while (sum > goal) {
+        //             sum -= arr[l];
+        //             l++;
+        //         }
+
+        //         count = count + (r - l + 1);
+
+        //         r++;
+        //     }
+
+        //     return count;
+        // }
+
+        // console.log(countSubArrayWithLessthanequalGoal(arr, goal));
+
+    </script>
+</body>

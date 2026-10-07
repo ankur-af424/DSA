@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<body>
+    <script type="text/javascript">
+        //Two sum pair with target sum
+        // function hasPairWithSum(arr, target) {
+        //     let left = 0, right = arr.length - 1;
+
+        //     while (left < right) {
+        //         const sum = arr[left] + arr[right];
+        //         if (sum === target) return true;
+        //         else if (sum < target) left++;
+        //         else right--;
+        //     }
+
+        //     return false;
+        // }
+
+
+        // Remove Duplicates from Sorted Array
+        // function removeDuplicates(nums) {
+        //     if (nums.length == 0) return [];
+        //     let slow = 0, fast = 1;
+        //     while (fast < nums.length - 1) {
+        //         if (nums[slow] !== nums[fast]) {
+        //             slow++;
+        //             nums[slow] = nums[fast];
+        //         }
+        //         fast++;
+        //     }
+
+        //     return nums.slice(0, slow + 1);
+        // }
+        // let nums = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+        // console.log(removeDuplicates(nums));
+
+
+        // Move Zeroes to the End
+        // function moveZeroesToEnd(nums) {
+        //     let insertPos = 0;
+        //     for (const num of nums) {
+        //         if (num !== 0) {
+        //             nums[insertPos++] = num;
+        //         }
+        //     }
+        //     while (insertPos < nums.length) {
+        //         nums[insertPos++] = 0;
+        //     }
+        //     return nums;
+        // }
+        // const nums = [0, 1, 2, 3, 0, 4, 4, 5];
+        // console.log(moveZeroesToEnd(nums))
+
+
+        // Remove duplicates from sorted array
+        // let arr = [1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+
+        // function removeDuplicates(arr) {
+
+        //     let write = 0;
+        //     for (let read = 1; read < arr.length; read++) {
+        //         if (arr[write] != arr[read]) {
+        //             write++;
+        //             arr[write] = arr[read];
+        //         }
+        //     }
+
+        //     return arr.slice(0, write + 1);
+
+        // }
+        // console.log(removeDuplicates(arr));
+
+        // remove occurences of a number from an array
+        // function removeOccurences(arr, num) {
+        //     if (arr.length <= 0) return arr;
+        //     let write = 0;
+        //     for (let read = 1; read < arr.length; read++) {
+        //         if (arr[read] !== num) {
+        //             arr[write++] = arr[read];
+        //         }
+        //     }
+        //     return arr.slice(0, write);
+        // }
+        // let nums = [3, 2, 2, 3]
+        // let val = 3
+        // console.log(removeOccurences(nums, val));
+
+        // string compression 
+        // function stringCompression(str) {
+        //     if (str.length <= 1) return str;
+        //     let read = 0, write = 0;
+        //     while (read < str.length) {
+        //         let current = str[read];
+        //         let count = 0;
+
+        //         while (read < str.length && str[read] === current) {
+        //             count++;
+        //             read++;
+        //         }
+
+        //         str[write++] = current;
+
+        //         for (const digit of count.toString()) {
+        //             str[write++] = digit;
+        //         }
+        //     }
+
+        //     return str.slice(0, write);
+        // }
+
+        // let str = ["a", "a", "a", "b", "b", "c"];
+        // console.log(stringCompression(str));
+
+        // cycle detection in linked list
+        // function hasCycle(head) {
+        //     let slow = head, fast = head;
+
+        //     while (fast && fast.next) {
+        //         slow = slow.next;
+        //         fast = fast.next.next;
+        //         if (slow === fast) return true;
+        //     }
+
+        //     return false;
+        // }
+
+        // middle of the linked list
+        // function findMiddle(head) {
+        //     let slow = head, fast = head;
+        //     while (fast && fast.next) {
+        //         slow = slow.next;
+        //         fast = fast.next.next;
+        //     }
+        //     return slow;
+        // }
+    </script>
+</body>
